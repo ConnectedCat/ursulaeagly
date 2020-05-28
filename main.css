@@ -13,8 +13,7 @@ body {
     padding: 0 2rem;
 }
 
-a {
-    text-decoration: none;
+a{
     color: white;
 }
 
@@ -44,8 +43,14 @@ nav ul li {
 nav ul li:first-child {
     padding-right: 15rem;
 }
+nav ul li a {
+    text-decoration: none;
+}
+nav ul li a.active{
+    text-decoration: underline;
+}
 
-.project {
+.project, .grid {
   text-align: justify;
   font-size: 2.5rem;
 }
@@ -54,4 +59,22 @@ nav ul li:first-child {
     content: "";
     display: inline-block;
     width: 100%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 20rem auto;
+}
+
+.grid .col p:first-child {
+    margin-top: 0;
+}
+
+#eaddr {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.date {
+    text-transform: uppercase;
 }
