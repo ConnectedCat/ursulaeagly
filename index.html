@@ -50,43 +50,44 @@
   </header>
   <main>
     <div class="project">
-      Our Epithelium 2019
+      <a href="Our-Etherium" rel="history">Our Epithelium 2019</a>
     </div>
     <div class="project">
-      Piece with gaps for each other 2016—18
+      <a href="Piece-With-Gaps-for-Each-Other" rel="history">Piece with gaps for each other 2016—18</a>
+    </div>
+    <div class="project"><a href="Self-Made-Man-Man-Made-Land" rel="history">
+        Self Made Man Man Made Land 2013</a>
+    </div>
+    <div class="project"><a href="Group-Dynamics-and-Visual-Sensitivity" rel="history">
+        Group Dynamics and Visual Sensitivity 2011</a>
     </div>
     <div class="project">
-      Self Made Man Man Made Land 2013
+      <a href="Excellent-Handicap" rel="history">Excellent Handicap 2010</a>
     </div>
     <div class="project">
-      Group Dynamics and Visual Sensitivity 2011
+      <a href="Fields-of-Ida" rel="history">Fields of Ida 2009</a>
     </div>
     <div class="project">
-      Excellent Handicap 2010
+      <a href="Aaron-Mattocks" rel="history">Aaron Mattocks 2009</a>
     </div>
     <div class="project">
-      Fields of Ida 2009
+      <a href="Smearcase" rel="history">Smearcase 2008</a>
     </div>
     <div class="project">
-      Aaron Mattocks 2009
+      <a href="Garden-of-Earthly-Delights" rel="history">Garden of Earthly Delights 2007</a>
     </div>
     <div class="project">
-      Smearcase 2008
+      <a href="Nobody-Try-To-Be-A-Hero" rel="history">Nobody Try To Be A Hero 2005</a>
     </div>
     <div class="project">
-      Garden of Earthly Delights 2007
+      <a href="You-Are-Responsible-Forever-For-What-You-Tame" rel="history">You Are Responsible Forever For What You
+        Tame 2004</a>
     </div>
     <div class="project">
-      Nobody Try To Be A Hero 2005
+      <a href="Superheavy-Western" rel="history">Superheavy Western 2003</a>
     </div>
-    <div class="project">
-      You Are Responsible Forever For What You Tame 2004
-    </div>
-    <div class="project">
-      Superheavy Western 2003
-    </div>
-    <div class="project">
-      The Forgotten Fish Memory Orchestra 2003
+    <div class="project"><a href="The-Forgotten-Fish-Memory-Orchestra" rel="history">
+        The Forgotten Fish Memory Orchestra 2003</a>
     </div>
 
     <div class="image-grid">
@@ -97,9 +98,35 @@
       <img src="https://via.placeholder.com/150x100/5f5">
       <img src="https://via.placeholder.com/150x100/55f">
     </div>
+    <div class="link-grid">
+
+    </div>
+    <script>
+      var calcTheLinks = function () {
+        var projects = document.querySelectorAll('.project');
+
+        projects.forEach((element) => {
+          var curLink = element.firstElementChild;
+          var newLink = document.createElement('a');
+
+          newLink.href = curLink.href;
+          newLink.style.height = element.scrollHeight + "px";
+          newLink.style.width = element.scrollWidth + "px";
+          newLink.style.top = element.offsetTop + "px";
+
+          document.querySelector('.link-grid').appendChild(newLink);
+        })
+      }
+
+      calcTheLinks();
+
+      window.addEventListener('resize', function(){
+        calcTheLinks();
+      })
+    </script>
   </main>
 
-  
+
 
 </body>
 

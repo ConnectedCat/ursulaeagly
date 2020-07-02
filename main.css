@@ -1,5 +1,29 @@
+[data-css-preset] .container_width {
+	width: 100% /*!content_left*/;
+}
+
+[data-css-preset] .container {
+	margin-left: 0 /*!content_left*/;
+	margin-right: auto /*!content_left*/;
+	text-align: left /*!text_left*/;
+}
+
+[data-css-preset] .content_padding {
+	padding-top: 0 /*!main_margin*/;
+	padding-bottom: 0 /*!main_margin*/;
+	padding-left: 2rem /*!main_margin*/;
+	padding-right: 2rem /*!main_margin*/;
+}
+
+[data-css-preset] #site_menu_button {
+	font-size: 36px /*!site_menu_button*/;
+	top: 3rem /*!site_menu_button*/;
+	left: 3rem /*!site_menu_button*/;
+    display: none !important;
+}
+
 :root {
-    font-size: 10px;
+    font-size: 10px !important;
 }
 
 html,
@@ -9,20 +33,50 @@ body {
 
 body {
     margin: 0px;
-    background-image: linear-gradient(black, rgb(36, 8, 8));
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
-
+    font-family: Helvetica Neue, Helvetica, sans-serif, Helvetica Neue Regular;
     padding: 0 2rem;
+
+    background: linear-gradient(black, rgb(36, 8, 8));
+    background-size: 400% 400%;
+
+    -webkit-animation: BackgroundAnimation 20s ease infinite;
+    -moz-animation: BackgroundAnimation 20s ease infinite;
+    -o-animation: BackgroundAnimation 20s ease infinite;
+    animation: BackgroundAnimation 20s ease infinite;
+}
+
+@-webkit-keyframes BackgroundAnimation {
+    0%{background-position:51% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:51% 0%}
+}
+@-moz-keyframes BackgroundAnimation {
+    0%{background-position:51% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:51% 0%}
+}
+@-o-keyframes BackgroundAnimation {
+    0%{background-position:51% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:51% 0%}
+}
+@keyframes BackgroundAnimation {
+    0%{background-position:51% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:51% 0%}
 }
 
 a {
     color: white;
+    cursor: pointer;
 }
 
 img {
     max-width: 100%;
     max-height: 100%;
+    width: auto !important;
+    height: auto !important;
 }
 
 header {
@@ -34,8 +88,12 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
+	font-size: 12px;
+    padding: 2rem;
+}
 
-    padding: 2rem 0;
+.cont nav {
+    padding: 2rem 0 6rem 0;
 }
 
 nav ul {
@@ -52,12 +110,13 @@ nav ul li {
     display: inline;
 }
 
-nav ul li a {
-    text-decoration: none;
+header nav ul li {
+    padding-left: 1.5rem;
 }
 
-nav ul li a.active {
-    text-decoration: underline;
+header nav ul li:first-child {
+    flex-grow: 2;
+    padding-left: 0px;
 }
 
 #mailTo {
@@ -72,6 +131,10 @@ main {
 .grid {
     text-align: justify;
     font-size: 1.3rem;
+}
+
+.project a {
+	text-decoration: none;
 }
 
 .project::after {
@@ -89,6 +152,10 @@ main {
     margin-top: 0;
 }
 
+.grid.project-grid {
+	line-height: 1.6rem;
+}
+
 .grid.project-grid .col {
     margin-bottom: 3rem;
 }
@@ -103,7 +170,15 @@ main {
     grid-column: 1/3;
 }
 
-.image-grid {
+.grid.project-grid img {
+    margin-bottom: 2rem;
+}
+.cont img {
+	width: 100% !important;
+}
+
+.image-grid,
+.link-grid {
     display: none;
 }
 
@@ -125,6 +200,7 @@ main {
 
     header nav ul li {
         padding-right: 3rem;
+        padding-left: 0;
     }
 
     header nav ul li:first-child {
@@ -140,7 +216,7 @@ main {
     .project,
     .grid {
         text-align: justify;
-        font-size: 2.5rem;
+        font-size: 2.6rem;
     }
 
     .grid {
@@ -178,7 +254,8 @@ main {
         height: 100%;
         display: grid;
         grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: repeat(13, 1fr);
+        grid-template-rows: auto 1fr 1fr 1fr 1fr auto auto 1fr auto 1fr 1fr 1fr auto;
+        grid-gap: 1rem 3rem;
     }
 
     .image-grid img:first-child {
@@ -187,12 +264,12 @@ main {
     }
 
     .image-grid img:nth-child(2) {
-        grid-column: 4/5;
+        grid-column: 3/4;
         grid-row: 7/8;
     }
 
     .image-grid img:nth-child(3) {
-        grid-column: 5/6;
+        grid-column: 4/5;
         grid-row: 7/8;
         
     }
@@ -208,7 +285,19 @@ main {
     }
 
     .image-grid img:nth-child(6) {
-        grid-column: 9/10;
+        grid-column: 6/7;
         grid-row: 13/14;
+    }
+    
+    .link-grid {
+        display: block;
+        position: absolute;
+        top: 0px;
+        z-index: 20;
+    }
+
+    .link-grid a {
+        display: block;
+        position: absolute;
     }
 }
